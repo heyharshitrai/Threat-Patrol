@@ -13,6 +13,7 @@ ___________.__                          __    __________         __             
 
 '''
 print(art)
+import re
 import requests
  
 def check_sql_injection(url):
@@ -69,8 +70,18 @@ def scan_website(url):
     print(check_ssrf(url))
     print(check_lfi(url))
     print(check_rce(url))
- 
+
+def check_url_format(url):
+	url_regex = re.compile(r'https?://[a-zA-Z0-9.-]+(:\d+)?/([a-zA-Z0-9._%-]+(/)?)*(\?[a-zA-Z0-9&=_%-]*)?')
+	match = url_regex.fullmatch(url)
+	return match
+
 url = input("Enter the website URL you want to scan: ")
+
+if not check_url_format(url):
+    print("Please make sure you have entered the url in the form: https://example.com/path/to/ressource/?param1=value1&param2=value2")
+    exit()
+
 try:
     scan_website(url)
 except:
