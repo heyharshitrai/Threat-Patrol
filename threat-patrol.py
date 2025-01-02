@@ -1,7 +1,7 @@
 # ThreatPatrol: A Simple Vulnerability Scanner Tool for Websites
 # Author: Harshit Rai
-# Github: https://github.com/itsraiharshit
-# Linkedin : https://www.linkedin.com/in/itsraiharshit/
+# Github: https://github.com/heyharshitrai
+# Linkedin : https://www.linkedin.com/in/heyharshitrai/
 art = '''
 
 ___________.__                          __    __________         __                .__   
